@@ -1,4 +1,4 @@
-name: Hello World
+name: Bun Test
 
 on:
   workflow_dispatch:
