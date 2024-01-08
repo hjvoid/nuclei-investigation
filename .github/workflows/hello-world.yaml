@@ -25,6 +25,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: 
+
     steps:
       - uses: actions/checkout@v3
       - uses: oven-sh/setup-bun@v1
@@ -32,6 +36,10 @@ jobs:
           bun-version: "latest"
       - run: bun install
       - run: bun run start
+          - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: ./dist
         
   deploy:
     needs: build
