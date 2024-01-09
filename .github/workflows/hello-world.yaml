@@ -23,13 +23,13 @@ concurrency:
 jobs:
   build:
 
-    runs-on: macos-12
+    runs-on: ubuntu-18.04
 
     steps:
       - uses: actions/checkout@v3
       - uses: oven-sh/setup-bun@v1
         with:
-          bun-version: "latest"
+          bun-version: 1.0.11
       - run: bun install
       - run: bun start
       - name: Upload artifact
