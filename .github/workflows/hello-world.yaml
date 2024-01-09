@@ -31,7 +31,7 @@ jobs:
         with:
           bun-version: "latest"
       - run: bun install
-      - run: bun run index.tx
+      - run: bun run index.ts
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
