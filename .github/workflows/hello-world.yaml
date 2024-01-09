@@ -32,8 +32,4 @@ jobs:
           bun-version: "latest"
       - run: bun install
       - run: bun start
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./dist
         
