@@ -13,7 +13,7 @@ jobs:
           go-version: 1.17
 
       - name: Amass - Enumeration
-        uses: fguisso/amass-action@main
+        uses: fguisso/amass-action@1.0
         with:
           domains: http://178.79.135.71/
           brute: true
