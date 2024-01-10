@@ -13,7 +13,7 @@ jobs:
       - name: Amass - Enumeration
         uses: hjvoid/amass-action@main
         with:
-          domain: http://178.79.135.71/
+          domain: https://owasp.org
           brute: true
           ipv4: true
           alts: true
