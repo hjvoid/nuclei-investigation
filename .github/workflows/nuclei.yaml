@@ -4,15 +4,36 @@ on:
   workflow_dispatch:
 
 jobs:
+  amass-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+
+      - name: Amass - Enumeration
+        uses: fguisso/amass-action@main
+        with:
+          domains: http://178.79.135.71/
+          brute: true
+
+      - name: GitHub Workflow artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: amass.txt
+          path: amass.txt
+
   nuclei-scan:
     runs-on: ubuntu-latest
+    needs: amass-scan
     steps:
       - uses: actions/checkout@v2
 
       - name: Nuclei - Vulnerability Scan
-        uses: projectdiscovery/nuclei-action@main
+        uses: projectdiscovery/nuclei-action@v1.0.7
         with:
-          target: http://178.79.135.71/
+          urls: amass.txt
 
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v2
