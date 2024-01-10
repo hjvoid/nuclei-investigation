@@ -12,7 +12,7 @@ jobs:
       - name: Nuclei - Vulnerability Scan
         uses: projectdiscovery/nuclei-action@main
         with:
-          target: https://google.com
+          target: http://178.79.135.71/
 
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v2
