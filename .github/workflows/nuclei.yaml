@@ -16,7 +16,7 @@ jobs:
           domain: owasp.org
 
       - name: Extract domains from Amass text file
-        run: sh ./extract_domains.sh
+        run: sh ./extract_domains.sh amass.txt
 
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v3
