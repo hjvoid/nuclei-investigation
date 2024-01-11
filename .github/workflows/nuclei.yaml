@@ -26,6 +26,11 @@ jobs:
     needs: amass-scan
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v3
+        with:
+          name: amass.txt
+      - name: Display structure of downloaded files
+          run: ls -R
 
       - name: Nuclei - Vulnerability Scan
         uses: projectdiscovery/nuclei-action@v1.0.7
