@@ -15,11 +15,14 @@ jobs:
         with:
           domain: owasp.org
 
+      - name: Run script
+        run: extract_domains.sh
+
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v3
         with:
           name: amass.txt
-          path: amass.txt
+          path: amass_domains.txt
 
   nuclei-scan:
     runs-on: ubuntu-latest
@@ -29,15 +32,15 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: amass.txt
+
+      - name: Display structure of downloaded files
+        run: 
+          ls -R
+          
       - name: Nuclei - Vulnerability Scan
         uses: projectdiscovery/nuclei-action@v1.0.7
         with:
           urls: amass.txt
-      
-      - name: Display structure of downloaded files
-        run: 
-          ls -R
-      
 
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v3
