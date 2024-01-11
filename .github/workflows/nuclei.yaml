@@ -21,7 +21,7 @@ jobs:
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: amass.txt
+          name: amass_domains.txt
           path: amass_domains.txt
 
   nuclei-scan:
@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/download-artifact@v3
         with:
-          name: amass.txt
+          name: amass_domains.txt
 
       - name: Display structure of downloaded files
         run: 
@@ -40,7 +40,7 @@ jobs:
       - name: Nuclei - Vulnerability Scan
         uses: projectdiscovery/nuclei-action@v1.0.7
         with:
-          urls: amass.txt
+          urls: amass_domains.txt
 
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v3
