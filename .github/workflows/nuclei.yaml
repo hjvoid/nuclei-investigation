@@ -13,7 +13,7 @@ jobs:
       - name: Amass - Enumeration
         uses: hjvoid/amass-action@main
         with:
-          domain: owasp.org
+          domain: http:139.162.215.138/wp-admin/
 
       - name: Extract domains from Amass text file
         run: sh ./extract_domains.sh amass.txt
