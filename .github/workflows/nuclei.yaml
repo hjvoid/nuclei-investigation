@@ -29,13 +29,15 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: amass.txt
-      - name: Display structure of downloaded files
-          run: ls -R
-
       - name: Nuclei - Vulnerability Scan
         uses: projectdiscovery/nuclei-action@v1.0.7
         with:
           urls: amass.txt
+      
+      - name: Display structure of downloaded files
+        run: 
+          ls -R
+      
 
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v3
