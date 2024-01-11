@@ -14,12 +14,9 @@ jobs:
         uses: hjvoid/amass-action@main
         with:
           domain: owasp.org
-          brute: true
-          ipv4: true
-          alts: true
 
       - name: GitHub Workflow artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: amass.txt
           path: amass.txt
@@ -36,7 +33,7 @@ jobs:
           urls: amass.txt
 
       - name: GitHub Workflow artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: nuclei.log
           path: nuclei.log
