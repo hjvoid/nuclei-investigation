@@ -41,6 +41,7 @@ jobs:
         uses: projectdiscovery/nuclei-action@v1.0.7
         with:
           urls: amass_domains.txt
+          flags: '- H "Cookie: wordpress_sec_90b1569174ff8a8001a104da46c9936e=hjvoid%7C1705165958%7CpZDDaSE3EB6yJ1ewPS9Bk6tfCWiVJAiMQ4DiWk3ZTYO%7Cc28acca3169425f5e1d58dfdacbd1134d8238df36a5e9d00adce2be7d8c60fb9; wordpress_test_cookie=WP%20Cookie%20check; wordpress_logged_in_90b1569174ff8a8001a104da46c9936e=hjvoid%7C1705165958%7CpZDDaSE3EB6yJ1ewPS9Bk6tfCWiVJAiMQ4DiWk3ZTYO%7Cc424ae0a0928fbdc3899a202f694eb00884d7696fab8f666959fe902694d7c81"'
 
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v3
