@@ -13,7 +13,7 @@ jobs:
       - name: Amass - Enumeration
         uses: hjvoid/amass-action@main
         with:
-          domain: api2.grophers.com
+          domain: api.grophers.com
 
       - name: Extract domains from Amass text file
         run: sh ./extract_domains.sh amass.txt
