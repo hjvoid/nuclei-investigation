@@ -41,7 +41,7 @@ jobs:
         uses: projectdiscovery/nuclei-action@v1.0.7
         with:
           urls: amass_domains.txt
-          flags: "-H ${{ secres.HACKERONE_USERNAME_HEADER }}" 
+          flags: "-H ${{ secrets.HACKERONE_USERNAME_HEADER }}" 
 
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v3
