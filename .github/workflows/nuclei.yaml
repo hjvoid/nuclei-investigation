@@ -13,7 +13,7 @@ jobs:
       - name: Amass - Enumeration
         uses: hjvoid/amass-action@main
         with:
-          domain: https://139-162-215-138.ip.linodeusercontent.com/wp-login.php?redirect_to=http%3A%2F%2F139.162.215.138%2Fwp-admin%2F&reauth=1
+          domain: http://139.162.215.138/wp-admin/
 
       - name: Extract domains from Amass text file
         run: sh ./extract_domains.sh amass.txt
