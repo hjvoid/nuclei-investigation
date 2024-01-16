@@ -13,7 +13,7 @@ jobs:
       - name: Amass - Enumeration
         uses: hjvoid/amass-action@main
         with:
-          domain: 
+          domain: example.com
 
       - name: Extract domains from Amass text file
         run: sh ./extract_domains.sh amass.txt
